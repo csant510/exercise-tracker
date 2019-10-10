@@ -24,7 +24,7 @@ connection.once('open', () => {
 
 //routes
 const carsRouter = require('./routes/cars');
-const maintenancesRouter = require('./routes/maintenance');
+const maintenancesRouter = require('./routes/maintenances');
 
 app.use('/cars', carsRouter);
 app.use('/maintenances', maintenancesRouter);
