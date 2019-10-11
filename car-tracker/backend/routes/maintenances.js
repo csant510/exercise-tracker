@@ -17,7 +17,7 @@ router.route('/').get((req, res) => {
     const price = Number(req.body.price);
    
   
-    const newMaintenance = new Exercise({
+    const newMaintenance = new Maintenance({
       model,
       date,
       oil,

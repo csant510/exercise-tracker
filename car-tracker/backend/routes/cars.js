@@ -15,7 +15,7 @@ router.route('/').get((req, res) => {
     const  year = Number(req.body.year);
     const mileage = Number(req.body.mileage);
   
-    const newExercise = new Exercise({
+    const newCar = new Car({
       make,
       model,
       year,
@@ -34,7 +34,7 @@ router.route('/').get((req, res) => {
   });
 
   router.route('/:id').delete((req, res) => {
-    Exercise.findByIdAndDelete(req.params.id)
+    Car.findByIdAndDelete(req.params.id)
       .then(() => res.json('Car deleted.'))
       .catch(err => res.status(400).json('Error: ' + err));
   });
