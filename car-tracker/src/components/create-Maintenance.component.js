@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 export default class CreateMaintenance extends Component{
     constructor(props){
@@ -84,9 +86,63 @@ export default class CreateMaintenance extends Component{
 
     render(){
         return (
-            <div>
-                <p>create Maintenance</p>
-            </div>
+           <div>
+               <h3> Create Maintenance Log </h3>
+               <form onSubmit={this.onSubmit}>
+               <div className="form-group"> 
+               <label>Model: </label>
+
+               </div>
+               <div className="form-group">
+                   <label>Date: </label>
+                   <div>
+                    <DatePicker
+                    seected={this.sate.date}
+                    onchange={this.onChangeDate}
+                    />
+                   </div>
+               </div>
+
+               <div class="form-check">
+                   <label>Oil</label>
+                   <input type="checkbox" className="form-control"
+                   value={this.sate.oil}
+                   onChange={this.onChangeOil}/>
+
+                 <label>fluid</label>
+                   <input type="checkbox" className="form-control"
+                   value={this.sate.fluid}
+                   onChange={this.onChangeFluid}/>
+
+                    <label>Tire Roation</label>
+                   <input type="checkbox" className="form-control"
+                   value={this.sate.tireRoation}
+                   onChange={this.onChangeTireRoation}/>
+
+               </div>
+               <div className="form-group">
+                   <label>Price: </label>
+                   <input 
+                   type="text" 
+                   className="form-control"
+                   value={this.sate.price}
+                   onChange={this.onChangePrice}
+                   />
+                </div>
+
+               <div className="form-group"> 
+               <label>Description: </label>
+               <input  type="text"
+               className="form-control"
+               value={this.sate.description}
+               onChange={this.onChangeDescription}
+              />
+                </div>
+                <div className="form-group">
+                 <input type="submit" value="Create Maintenance Log" className="btn btn-primary" />
+                 </div>
+               </form>              
+        </div>
         )
     }
 }
