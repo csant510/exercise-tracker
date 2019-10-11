@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import Navbar from "./components/navbar.component"
-import MaintenanceList from "./components/exercises-list.component";
-import EditMaintenance from "./components/edit-exercise.component";
-import CreateMaintenance from "./components/create-exercise.component";
-import CreateCar from "./components/create-user.component";
+import MaintenanceList from "./components/Maintenance-list.component";
+import EditMaintenance from "./components/edit-Maintenance.component";
+import CreateMaintenance from "./components/create-Maintenance.component";
+import CreateCar from "./components/create-car.component";
 
 import './App.css';
 
