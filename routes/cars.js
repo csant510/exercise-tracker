@@ -10,16 +10,13 @@ router.route('/').get((req, res) => {
 
   
   router.route('/add').post((req, res) => {
+    console.log(req.body);
     const make = req.body.make;
-    const model = req.body.model;
-    const  year = Number(req.body.year);
-    const mileage = Number(req.body.mileage);
+ 
+  
   
     const newCar = new Car({
       make,
-      model,
-      year,
-      mileage,
     });
   
     newCar.save()
