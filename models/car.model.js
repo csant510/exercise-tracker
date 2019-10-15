@@ -6,6 +6,8 @@ const carSchema = new Schema({
     make: String,
     model: String,
     year: Number,
+    author: String,
+    nickname: String,
 
   }, {
     timestamps: true,

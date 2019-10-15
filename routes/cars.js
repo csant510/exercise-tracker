@@ -2,7 +2,7 @@ const router = require('express').Router();
 let Car = require('../models/car.model');
 
 router.route('/').get((req, res) => {
-    Credential.find()
+    Car.find()
       .then(cars => res.json(cars))
       .catch(err => res.status(400).json('Error: ' + err));
   });
@@ -12,11 +12,15 @@ router.route('/').get((req, res) => {
   router.route('/add').post((req, res) => {
     console.log(req.body);
     const make = req.body.make;
+    const model = req.body.model;
+    const year =  req.body.year;
  
   
   
     const newCar = new Car({
       make,
+      model,
+      year,
     });
   
     newCar.save()
@@ -42,7 +46,6 @@ router.route('/').get((req, res) => {
         car.make = req.body.make;
         car.model = req.body.model;
         car.year = Number(req.body.year);
-        car.mileage = Number(req.body.mileage);
   
         car.save()
           .then(() => res.json('car updated!'))
