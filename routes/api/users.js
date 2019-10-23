@@ -1,8 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const userCtrl = require('../../controllers/users');
+const usersCtrl = require('../../controllers/users');
 
-router.post('/signup', userCtrl.signup);
-router.post('/login', userCtrl.login);
+/*---------- Public Routes ----------*/
+router.post('/signup', usersCtrl.signup);
+
+
+
+/*---------- Protected Routes ----------*/
+
+
+
 
 module.exports = router;
