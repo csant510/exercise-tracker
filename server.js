@@ -3,6 +3,10 @@ const path = require('path');
 const cors = require('cors');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const AdminBro = require('admin-bro');
+const AdminBroExpressjs = require('admin-bro-expressjs');
+
+AdminBro.registerAdapter(require('admin-bro-mongoose'))
 
 const app = express();
 
