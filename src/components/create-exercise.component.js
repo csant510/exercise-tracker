@@ -29,7 +29,8 @@ export default class CreateExercise extends Component {
         if (response.data.length > 0) {
           this.setState({
             users: response.data.map(user => user.username),
-            username: response.data[0].username
+            username: response.data[0].username,
+           
           })
         }
       })
@@ -78,7 +79,7 @@ export default class CreateExercise extends Component {
     axios.post('http://localhost:3001/exercises/add', exercise)
       .then(res => console.log(res.data));
 
-    window.location = '/';
+    window.location = '/ExcercisesList';
   }
 
   render() {

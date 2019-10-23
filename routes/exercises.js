@@ -7,11 +7,12 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/add').post(checkAuth,(req, res) => {
+router.route('/add').post((req, res) => {
   const username = req.body.username;
   const description = req.body.description;
   const duration = Number(req.body.duration);
   const date = Date.parse(req.body.date);
+  const author = req.body.author;
 
   const newExercise = new Exercise({
     username,
@@ -45,6 +46,7 @@ router.route('/update/:id').post((req, res) => {
       exercise.description = req.body.description;
       exercise.duration = Number(req.body.duration);
       exercise.date = Date.parse(req.body.date);
+    
 
       exercise.save()
         .then(() => res.json('Exercise updated!'))
@@ -52,9 +54,6 @@ router.route('/update/:id').post((req, res) => {
     })
     .catch(err => res.status(400).json('Error: ' + err));
 });
-function checkAuth(req, res, next) {
-  if (req.user) return next();
-  return res.status(401).json({msg: 'Not Authorized'});
-}
+
 
 module.exports = router;

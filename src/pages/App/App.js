@@ -41,7 +41,7 @@ class App extends React.Component {
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             } />
-            <Route exact path='/login' render={({ history }) =>
+            <Route exact path='/' render={({ history }) =>
               <LoginPage
                 history={history}
                 handleSignupOrLogin={this.handleSignupOrLogin}
