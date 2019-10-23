@@ -31,8 +31,6 @@ connection.once('open', () => {
 })
 
 //routes
-
-
 const exercisesRouter = require('./routes/exercises');
 
 
