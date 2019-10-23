@@ -22,11 +22,12 @@ export default class CreateExercise extends Component {
       author:'',
     }
   }
-
+  
+  
 
   
   componentDidMount() {
-    axios.get('https://sei-exercise-tracker.herokuapp.com/users/')
+    axios.get('http://localhost:3001/users/users/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -78,7 +79,7 @@ export default class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('https://sei-exercise-tracker.herokuapp.com/exercises/add', exercise)
+    axios.post('http://localhost:3001/exercises/add', exercise)
       .then(res => console.log(res.data));
 
     window.location = '/ExcercisesList';
