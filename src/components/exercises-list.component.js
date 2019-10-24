@@ -17,14 +17,13 @@ const Exercise = props => (
 export default class ExercisesList extends Component {
   constructor(props) {
     super(props);
-
     this.deleteExercise = this.deleteExercise.bind(this)
 
     this.state = {exercises: []};
   }
 
   componentDidMount() {
-    axios.get('https://sei-exercise-tracker.herokuapp.com/exercises/')
+    axios.get('http://localhost:3001/exercises/')
       .then(response => {
         this.setState({ exercises: response.data })
       })
@@ -34,7 +33,7 @@ export default class ExercisesList extends Component {
   }
 
   deleteExercise(id) {
-    axios.delete('https://sei-exercise-tracker.herokuapp.com/exercises/'+id)
+    axios.delete('http://localhost:3001/exercises/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

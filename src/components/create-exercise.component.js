@@ -3,10 +3,11 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
+
 export default class CreateExercise extends Component {
   constructor(props) {
     super(props);
-
+    const author=props.user 
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
@@ -19,7 +20,7 @@ export default class CreateExercise extends Component {
       duration: 0,
       date: new Date(),
       users: [],
-      author:'',
+      author: author,
     }
   }
   
@@ -74,13 +75,17 @@ export default class CreateExercise extends Component {
       username: this.state.username,
       description: this.state.description,
       duration: this.state.duration,
-      date: this.state.date
+      date: this.state.date,
+      author: this.props.author,
     }
 
     console.log(exercise);
 
+
     axios.post('http://localhost:3001/exercises/add', exercise)
       .then(res => console.log(res.data));
+
+      console.log(exercise)
 
     window.location = '/ExcercisesList';
   }

@@ -49,7 +49,7 @@ class App extends React.Component {
             } />
             <Route path="/ExcercisesList" exact component={ExcercisesList} />
             <Route path="/edit/:id" component={EditExercise} />
-            <Route path="/create" component={CreateExercise} />
+          <Route user={this.state.user} path="/create" render={_ => <CreateExercise user={this.state.user}/>}/>
           </Switch>
         </div>
       </Router>
