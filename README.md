@@ -33,9 +33,11 @@ This app is way to track excercises how many exercises are being done.
 
 ## NPM Packages Used: 
   - bcrypt (Auth)
-  - react-player (Youtube Player)
+  - mongoose
+  - morgan
+  - cors
   - react-bootstrap (Styling)
-  - recharts (Visualization)
+ 
 
 ## Getting Started: How to Use
   - 
